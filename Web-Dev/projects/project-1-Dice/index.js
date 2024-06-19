@@ -1,4 +1,4 @@
-document.querySelectorAll('.refresh')[0].addEventListener("click",function(){{  
+ 
     const element = document.getElementById("refresh");  // Get the DIV element
     element.classList.toggle("refresh");  // Toggle the class
     let randomNumber1=Math.floor(Math.random()*6)+1;
@@ -18,4 +18,3 @@ document.querySelectorAll('.refresh')[0].addEventListener("click",function(){{
     else{   
         document.querySelector("h1").innerHTML='Draw!<br> <span class="refresh" style="font-size:2 rem; color: blanchedalmond;">Play Again</span>';
     }
-}});
