@@ -1,12 +1,13 @@
 for(let i=0;i<document.querySelectorAll(".drum").length;i++){
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
         let letter =this.innerHTML;
-       
         playSound(letter);
+        animate(letter);
     })  
 }
 document.addEventListener("keypress",function(event){
     playSound(event.key);
+    animate(event.key);
 })
 function playSound(letter){
     switch(letter){
@@ -41,4 +42,11 @@ function playSound(letter){
         default:
             console.log(letter)
     }
+}
+function animate(pressedKey){
+    const activeButton = document.querySelector("."+pressedKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    },50);
 }
