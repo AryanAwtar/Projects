@@ -1,4 +1,4 @@
-document.querySelector('.refresh').addEventListener("click",function(){{  
+document.querySelectorAll('.refresh')[0].addEventListener("click",function(){{  
     const element = document.getElementById("refresh");  // Get the DIV element
     element.classList.remove("refresh");
     let randomNumber1=Math.floor(Math.random()*6)+1;
