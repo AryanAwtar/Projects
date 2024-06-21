@@ -1,8 +1,21 @@
 let gamePatten=[];
+let userClickedPattern=[];
 let buttonColors=["red","blue","green","yellow"];
 let randomIndex = nextSequence();
 let randomChosenColour = buttonColors[randomIndex];
 gamePatten.push(randomChosenColour);
+
+
+for(let i=0;i<document.querySelectorAll(".btn").length;i++){
+    document.querySelectorAll(".btn")[i].addEventListener("click",function(){
+        let userChosenColour = this.id;
+        userClickedPattern.push(userChosenColour);
+        console.log(userClickedPattern);
+        soundButton(userChosenColour);
+        animateButton(userChosenColour);
+        
+    })  
+}
 
 document.addEventListener("click",function(){{  
 soundButton(randomChosenColour);
@@ -54,8 +67,4 @@ function nextSequence(){
 
 console.log(nextSequence());   
 console.log(buttonColors[2]);  
-console.log(gamePatten);     
-console.log(randomChosenColour);
-console.log(randomIndex);
-console.log(gamePatten[0]);
-console.log(gamePatten.length);
+console.log(gamePatten);
