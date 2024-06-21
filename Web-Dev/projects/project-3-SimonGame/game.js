@@ -4,11 +4,14 @@ let randomIndex = nextSequence();
 let randomChosenColour = buttonColors[randomIndex];
 gamePatten.push(randomChosenColour);
 
-
+document.addEventListener("click",function(){{  
 soundButton(randomChosenColour);
 animateButton(randomChosenColour);
-
-
+}})
+document.addEventListener("keypress",function(event){
+    soundButton(randomChosenColour);
+    animateButton(randomChosenColour);
+})
 function soundButton(buttonColor){
     switch(buttonColor){
         case "red":
@@ -31,6 +34,7 @@ function soundButton(buttonColor){
             console.log(buttonColor);
             let def = new Audio("sounds/wrong.mp3");
             def.play();
+            break;
     } 
 }
 
